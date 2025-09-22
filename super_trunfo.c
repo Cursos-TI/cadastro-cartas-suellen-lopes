@@ -1,11 +1,10 @@
 #include <stdio.h>
 #include <string.h>
-//-- Estrutura (struct) para representar uma carta de Super Trunfo --
 
 struct CartaSuperTrunfo{
     char Estado;
-    char Codigo_carta[5];// Ex: "A01", "B03" 
-    char Nome_Cidade[50];// Tamanho suficiente para o nome da cidade
+    char Codigo_carta[5];
+    char Nome_Cidade[50];
     int populacao;
     float area_km2;
     float pib;
@@ -13,25 +12,18 @@ struct CartaSuperTrunfo{
     /* data */
 };
 
-//-- Prototipos das funcoes --
-// Funcoes para ler e exibir os dado.
-
 void lerDadosCarta(struct CartaSuperTrunfo *Carta);
 void exibirDadosCarta(const struct CartaSuperTrunfo *carta);
 
 int main(){
--- // Declarando duas variaveis do tipo CartaSuperTrunfo 
     struct CartaSuperTrunfo carta1, carta2;
 
-//-- Leitura dos dados da primeira carta 
     printf("\n---Cadastro da Primeira Carta---\n");
     lerDadosCarta(&carta1);
 
-//-- Leitura dos dados da segunda carta 
     printf("\n---Cadastro da Segunda Carta---\n");
     lerDadosCarta(&carta2);
 
-//-- Exibicao dos dados cadastrados --   
     printf("\n--- Dados das Cartas Cadastradas---\n");
     printf("\nCarta 1:\n");
     exibirDadosCarta(&carta1);
@@ -42,8 +34,6 @@ int main(){
     return 0;
 
 }
-
-//--- Implementacao da funcao para ler os dados de uma carta ---
 
 void lerDadosCarta(struct CartaSuperTrunfo *carta){
     
@@ -67,7 +57,6 @@ void lerDadosCarta(struct CartaSuperTrunfo *carta){
     /* data */
 };
 
-//--- Implementacao da funcao para exibir os dados de uma carta ---
 
 void exibirDadosCarta(const struct CartaSuperTrunfo *carta){
 
@@ -80,7 +69,3 @@ void exibirDadosCarta(const struct CartaSuperTrunfo *carta){
     printf(" Numero de Pontos Turisticos: %d\n", carta->num_pontos_turisticos);
     /* data */
 };
-
-
-
-
